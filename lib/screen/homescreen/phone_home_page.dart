@@ -31,20 +31,29 @@ class PhoneHomeScreen extends StatelessWidget {
       child: Column(
         children: [
           // github contribution graph from <img src="http://ghchart.rshah.org/2016rshah" alt="2016rshah's Github chart" />
-          const SizedBox(
+
+          Container(
+            // height: MediaQuery.of(context).size.height * 0.12,
+            decoration: BoxDecoration(
+              color: Colors.black,
+              borderRadius: BorderRadius.circular(12),
+            ),
+
+            padding:
+                const EdgeInsets.only(top: 4, left: 4, right: 8, bottom: 8),
+            child: currentState.imageBytes != null
+                ? SvgPicture.memory(
+                    currentState.imageBytes!,
+                  )
+                : SvgPicture.asset(
+                    "assets/images/yaviral17.svg",
+                    fit: BoxFit.fitHeight,
+                    height: 54,
+                  ),
+          ),
+          SizedBox(
             height: 20,
           ),
-          currentState.imageBytes != null
-              ? SvgPicture.memory(
-                  currentState.imageBytes!,
-                  width: 300,
-                  height: 300,
-                )
-              : SvgPicture.asset(
-                  "assets/images/yaviral17.svg",
-                  width: 300,
-                  height: 300,
-                ),
           Wrap(
             crossAxisAlignment: WrapCrossAlignment.center,
             alignment: WrapAlignment.start,
