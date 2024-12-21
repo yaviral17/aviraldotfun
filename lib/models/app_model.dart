@@ -5,13 +5,15 @@ class AppModel {
   String title;
   String? assetPath;
   IconData? icon;
-  Color color;
+  Color backgroundColor;
+  Color iconColor;
   Widget? screen;
   String? link;
 
   AppModel({
     required this.title,
-    required this.color,
+    required this.backgroundColor,
+    required this.iconColor,
     this.assetPath,
     this.icon,
     this.link,

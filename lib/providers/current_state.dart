@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:developer';
 import 'dart:typed_data';
 
@@ -29,14 +30,15 @@ class CurrentState extends ChangeNotifier {
   // on init
   CurrentState() {
     log("Current State Initialized");
-    getRandomQuote().then((value) {
-      log("Quote of the day loaded: $value");
-      changeQuote(value);
-    });
-    getGraphSvg().then((value) {
-      imageBytes = value;
-      notifyListeners();
-    });
+
+    // getRandomQuote().then((value) {
+    //   log("Quote of the day loaded: $value");
+    //   changeQuote(value);
+    // });
+    // getGraphSvg().then((value) {
+    //   imageBytes = value;
+    //   notifyListeners();
+    // });
     log("Quote of the day loaded: $quote");
   }
 

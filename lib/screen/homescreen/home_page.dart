@@ -200,7 +200,12 @@ class HomePage extends StatelessWidget {
                           device: currentState.currentDevice,
                           screen: Container(
                               decoration: BoxDecoration(
-                                  gradient: currentState.bgGradient),
+                                image: DecorationImage(
+                                  image: AssetImage("assets/images/ios_bg.png"),
+                                  fit: BoxFit.cover,
+                                ),
+                                borderRadius: BorderRadius.circular(20),
+                              ),
                               child: ScreenWrapper(
                                   childG: currentState.currentScreen)),
                         );
