@@ -110,12 +110,12 @@ List<AppModel> apps = [
       color: Colors.white,
       icon: Icons.ac_unit_rounded,
       screen: const Skills()),
-  AppModel(
-    title: "Youtube",
-    assetPath: "assets/icons/youtube.png",
-    color: Colors.white,
-    link: youtubeChannel,
-  ),
+  // AppModel(
+  //   title: "Youtube",
+  //   assetPath: "assets/icons/youtube.png",
+  //   color: Colors.white,
+  //   link: youtubeChannel,
+  // ),
   AppModel(
     title: "LinkedIn",
     assetPath: "assets/icons/linkedin.png",
