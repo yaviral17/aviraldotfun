@@ -101,8 +101,8 @@ class HomePage extends StatelessWidget {
                                     ),
                                     child: Transform(
                                       transform: Matrix4.identity()
-                                        ..setEntry(3, 2, 0.01)
-                                        ..rotateY(-0.06),
+                                        ..setEntry(3, 2, 0.02)
+                                        ..rotateY(-0.00),
                                       alignment: FractionalOffset.center,
                                       child: Row(
                                         children: [

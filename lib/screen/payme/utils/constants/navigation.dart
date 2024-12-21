@@ -1,5 +1,6 @@
 import 'package:aviraldotfun/consts/data.dart';
 import 'package:aviraldotfun/providers/current_state.dart';
+import 'package:aviraldotfun/screen/homescreen/phone_home_page.dart';
 import 'package:aviraldotfun/screen/payme/view/home/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -9,9 +10,16 @@ class PayMeNavigation {
   static List<Widget> screenStack = [];
 
   static void fadeBack() {
+    if (screenStack.isEmpty) {
+      Provider.of<CurrentState>(Get.context!, listen: false).changePhoneScreen(
+        const PhoneHomeScreen(),
+        true,
+      );
+      return;
+    }
+
     screenStack.removeLast();
-    // Provider.of<CurrentState>(Get.context!, listen: false)
-    //     .changePhoneScreen(screenStack.last, true);
+
     if (screenStack.isNotEmpty) {
       paymeNavigationKey.currentState!.pushReplacement(MaterialPageRoute(
         builder: (context) => screenStack.last,
