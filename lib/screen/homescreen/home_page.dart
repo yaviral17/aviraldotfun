@@ -325,41 +325,41 @@ class HomePage extends StatelessWidget {
               ),
 
               /// bottom button for device selection
-              Selector<CurrentState, DeviceInfo>(
-                  selector: (context, p1) => p1.currentDevice,
-                  builder: (context, _, __) {
-                    return Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        ...List.generate(devices.length, (index) {
-                          return CustomButton(
-                            pressed: currentState.currentDevice ==
-                                    devices[index].device
-                                ? Pressed.pressed
-                                : Pressed.notPressed,
-                            animate: true,
-                            borderRadius: 100,
-                            isThreeD: true,
-                            backgroundColor: Colors.black,
-                            width: 37.5,
-                            height: 37.5,
-                            onPressed: () {
-                              currentState.changeSelectedDevice(
-                                devices[index].device,
-                              );
-                            },
-                            child: Center(
-                              child: Icon(
-                                devices[index].icon,
-                                color: Colors.white,
-                                size: 25,
-                              ),
-                            ),
-                          );
-                        })
-                      ],
-                    );
-                  })
+              // Selector<CurrentState, DeviceInfo>(
+              //     selector: (context, p1) => p1.currentDevice,
+              //     builder: (context, _, __) {
+              //       return Row(
+              //         mainAxisAlignment: MainAxisAlignment.spaceAround,
+              //         children: [
+              //           ...List.generate(devices.length, (index) {
+              //             return CustomButton(
+              //               pressed: currentState.currentDevice ==
+              //                       devices[index].device
+              //                   ? Pressed.pressed
+              //                   : Pressed.notPressed,
+              //               animate: true,
+              //               borderRadius: 100,
+              //               isThreeD: true,
+              //               backgroundColor: Colors.black,
+              //               width: 37.5,
+              //               height: 37.5,
+              //               onPressed: () {
+              //                 currentState.changeSelectedDevice(
+              //                   devices[index].device,
+              //                 );
+              //               },
+              //               child: Center(
+              //                 child: Icon(
+              //                   devices[index].icon,
+              //                   color: Colors.white,
+              //                   size: 25,
+              //                 ),
+              //               ),
+              //             );
+              //           })
+              //         ],
+              //       );
+              //     })
             ],
           ),
         ],

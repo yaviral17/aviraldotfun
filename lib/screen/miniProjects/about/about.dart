@@ -1,10 +1,8 @@
 import 'package:aviraldotfun/providers/current_state.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:markdown_viewer/markdown_viewer.dart';
 import 'package:provider/provider.dart';
-
 import '../../../consts/data.dart';
 
 class AboutMe extends StatefulWidget {
@@ -90,6 +88,9 @@ class _AboutMeState extends State<AboutMe> {
                     ),
                   ),
                 ),
+
+                // Show Resume
+
                 // Container(
                 //   alignment: Alignment.center,
                 //   padding:

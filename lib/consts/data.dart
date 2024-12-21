@@ -3,9 +3,14 @@ import 'package:aviraldotfun/models/color_model.dart';
 import 'package:aviraldotfun/models/device_model.dart';
 import 'package:aviraldotfun/screen/miniProjects/education/education.dart';
 import 'package:aviraldotfun/screen/miniProjects/experience/experience.dart';
+import 'package:aviraldotfun/screen/payme/utils/theme/theme.dart';
+import 'package:aviraldotfun/screen/payme/view/auth/auth_view.dart';
+import 'package:aviraldotfun/screen/payme/view/home/home_view.dart';
 import 'package:device_frame/device_frame.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:iconsax/iconsax.dart';
 
 import '../models/experience_model.dart';
 import '../models/skill_model.dart';
@@ -87,7 +92,7 @@ List<ColorModel> colorPalette = [
     ),
   ),
 ];
-
+final paymeNavigationKey = GlobalKey<NavigatorState>();
 List<AppModel> apps = [
   AppModel(
       title: "About",
@@ -95,25 +100,31 @@ List<AppModel> apps = [
       icon: Icons.person,
       screen: const AboutMe()),
   AppModel(
+    title: "Resume",
+    color: Colors.white,
+    icon: Iconsax.document,
+    link: resumeLink,
+  ),
+  AppModel(
       title: "Skills",
       color: Colors.white,
       icon: Icons.ac_unit_rounded,
       screen: const Skills()),
   AppModel(
     title: "Youtube",
-    assetPath: "assets/icons/youtube.svg",
+    assetPath: "assets/icons/youtube.png",
     color: Colors.white,
     link: youtubeChannel,
   ),
   AppModel(
     title: "LinkedIn",
-    assetPath: "assets/icons/linkedin.svg",
+    assetPath: "assets/icons/linkedin.png",
     color: Colors.white,
     link: linkedIn,
   ),
   AppModel(
     title: "Twitter/X",
-    assetPath: "assets/icons/twitter.svg",
+    assetPath: "assets/icons/x.png",
     color: Colors.white,
     link: twitter,
   ),
@@ -136,13 +147,26 @@ List<AppModel> apps = [
   ),
   AppModel(
     title: "Github",
-    assetPath: "assets/icons/github.svg",
+    assetPath: "assets/icons/github.png",
     color: Colors.white,
     link: github,
   ),
   AppModel(
+    title: "PayME",
+    assetPath: "assets/images/logo_icon.png",
+    color: Colors.black,
+    screen: GetMaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: PayMeAppTheme.lightTheme,
+      darkTheme: PayMeAppTheme.darkTheme,
+      themeMode: ThemeMode.dark,
+      navigatorKey: paymeNavigationKey,
+      home: const AuthView(),
+    ),
+  ),
+  AppModel(
     title: "Play Store",
-    assetPath: "assets/icons/playstore.svg",
+    assetPath: "assets/icons/playstore.png",
     color: Colors.white,
     link: playApps,
   ),
@@ -252,7 +276,7 @@ const String github = "https://github.com/yaviral17";
 const String twitter = "https://twitter.com/sudo_yavi";
 const String topMate = "https://topmate.io/yaviral17";
 const String resumeLink =
-    "https://drive.google.com/file/d/1LO3Km6fFkJVW92MNXRLSYl--E9YlTHJd/view";
+    "https://drive.google.com/file/d/1C4R6GsVOWfIcUIOmem5cXQfutzSOerVD/view?usp=drive_link";
 const String email = "yaviralatwork@gmail.com";
 String introduction = "";
 String intro_markdown = """
@@ -266,19 +290,22 @@ I thrive on solving challenges—whether it’s optimizing app layouts, fixing c
 - **Paysa**: An expense management app with AI-powered money management features, helping 100+ users split and track bills.  
 - **InShop**: A product detail aggregator, integrating shopping APIs across 50+ websites to optimize performance and user experience.  
 
----
 
-### Let’s Connect 🌟  
-I’m always excited to collaborate and build something amazing together!  
-- [**Topmate**](#)  
-- [LinkedIn](https://linkedin.com/in/yaviral17)  
-- [GitHub](https://github.com/yaviral17)  
 
-Feel free to reach out and say hi! 🚀  
 
 """;
+
+// ---
+// ### Let’s Connect 🌟
+// I’m always excited to collaborate and build something amazing together!
+// - [**Topmate**](#)
+// - [LinkedIn](https://linkedin.com/in/yaviral17)
+// - [GitHub](https://github.com/yaviral17)
+
+// Feel free to reach out and say hi! 🚀
+
 const String playApps =
-    "https://play.google.com/store/apps/developer?id=AppyMonk";
+    "https://play.google.com/store/apps/details?id=space.shortsqueeze.inspire.inspire_scholarship&hl=en-US";
 
 List<SkillsModel> skills = [
   SkillsModel(skillName: "Flutter", colorS: Colors.blue, iconPath: "random"),
@@ -303,25 +330,38 @@ List<SkillsModel> skills = [
     colorS: Colors.blue,
   ),
   SkillsModel(
-    skillName: "CI/CD",
-    colorS: Colors.yellow,
+    skillName: "GetX",
+    colorS: Colors.blue,
   ),
   SkillsModel(
-    skillName: "Code Magic",
-    colorS: Colors.orange,
+    skillName: "Bloc",
+    colorS: Colors.blue,
   ),
   SkillsModel(
-    skillName: "Firebase",
-    colorS: Colors.yellow,
+    skillName: "Python",
+    colorS: Colors.blue,
   ),
+
+  // SkillsModel(
+  //   skillName: "CI/CD",
+  //   colorS: Colors.yellow,
+  // ),
+  // SkillsModel(
+  //   skillName: "Code Magic",
+  //   colorS: Colors.orange,
+  // ),
+  // SkillsModel(
+  //   skillName: "Firebase",
+  //   colorS: Colors.yellow,
+  // ),
   SkillsModel(
     skillName: "REST API",
-    colorS: Colors.yellow,
+    colorS: Colors.blue,
   ),
 ];
 
 List<SkillsModel> languages = [
-  SkillsModel(skillName: "Punjabi", colorS: Colors.orange),
+  // SkillsModel(skillName: "Punjabi", colorS: Colors.orange),
   SkillsModel(skillName: "Hindi", colorS: Colors.black),
   SkillsModel(skillName: "English", colorS: Colors.blueGrey),
 ];

@@ -1,4 +1,5 @@
 import 'package:aviraldotfun/screen/homescreen/phone_home_page.dart';
+import 'package:aviraldotfun/screen/payme/utils/constants/navigation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -12,6 +13,7 @@ class ScreenWrapper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     CurrentState instance = Provider.of<CurrentState>(context, listen: false);
+    bool isPayme = instance.title == "PayME";
     return Column(
       children: [
         // here can show the appbar
@@ -19,7 +21,8 @@ class ScreenWrapper extends StatelessWidget {
           if (!instance.isMainScreen) {
             return Container(
               width: double.infinity,
-              decoration: const BoxDecoration(color: Colors.white),
+              decoration:
+                  BoxDecoration(color: isPayme ? Colors.black : Colors.white),
               padding: const EdgeInsets.only(top: 30),
               // height: 50,
               child: Padding(
@@ -27,15 +30,28 @@ class ScreenWrapper extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
+                    Visibility(
+                      visible: isPayme,
+                      child: IconButton(
+                        icon: const Icon(
+                          Icons.arrow_back_ios,
+                          color: Colors.white,
+                        ),
+                        onPressed: () {
+                          PayMeNavigation.fadeBack();
+                        },
+                      ),
+                    ),
                     Text(
                       instance.title ?? "",
-                      style: GoogleFonts.inter(fontSize: 18),
+                      style: GoogleFonts.inter(
+                        fontSize: 18,
+                        color: isPayme ? Colors.white : null,
+                      ),
                     ),
                     IconButton(
-                      icon: const Icon(
-                        Icons.close,
-                        color: Colors.black,
-                      ),
+                      icon: Icon(Icons.close,
+                          color: !isPayme ? Colors.black : Colors.white),
                       onPressed: () {
                         instance.changePhoneScreen(
                           const PhoneHomeScreen(),
