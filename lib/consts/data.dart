@@ -190,10 +190,19 @@ final List<JobExperience> education = [
     title: 'Computer Science Engineering',
     company: 'VIT Bhopal University',
     startDate: 'June 2021',
-    endDate: 'Present',
+    endDate: 'June 2025',
     bulletPoints: [
-      "Currently in the final year of my college!",
-      "Most productive years of my life"
+      'Learning about computer science and engineering',
+      'Working on various projects',
+      'Learning about Flutter and Dart in depth',
+      'Learning about various technologies and languages like Python, C++, Java, etc.',
+      'Exploring the world of open source',
+      'Participating in various hackathons',
+      'Won internal hackathon in college',
+      'Won intrermural basketball in college',
+      'Did internship in various companies',
+      'Baught my first domain',
+      'Baught Macbook pro M4 2024 by myself',
     ],
   ),
   JobExperience(
@@ -204,7 +213,13 @@ final List<JobExperience> education = [
     startDate: 'June 2017',
     endDate: 'June 2021',
     bulletPoints: [
-      'Stressed years of my life',
+      'Completed my 10+2 with PCM',
+      'Was best in computer science',
+      'Got 76% in 12th',
+      'Made my first flutter app in 12th',
+      'Won CBSE cluster in 12th in Basketball',
+      'Played Basketball at state level',
+      'Got a chance to play in FIBA 3X3 U-18',
     ],
   ),
   JobExperience(
@@ -215,7 +230,12 @@ final List<JobExperience> education = [
     startDate: 'June 2016',
     endDate: 'June 2017',
     bulletPoints: [
-      'Best year of college life',
+      'Started my coading journey, with C++',
+      'I was only good at maths',
+      'Hated Biology',
+      'Started playing basketball',
+      'Got a chance to play in CBSE cluster under 19',
+      'Got 68% in 10th',
     ],
   ),
 ];

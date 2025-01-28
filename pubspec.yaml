@@ -70,7 +70,7 @@ dependencies:
   image_cropper: ^8.1.0
   intl: ^0.20.1
   image_picker: ^1.1.2
-  smooth_corner: ^1.1.0
+  smooth_corner: ^1.1.1
   icons_plus: ^5.0.0
 
 dev_dependencies:
