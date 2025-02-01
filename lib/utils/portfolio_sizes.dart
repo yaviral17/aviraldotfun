@@ -9,7 +9,7 @@ class ASizes {
 
   static double arw(BuildContext context, double size) {
     double returnWidth = MediaQuery.of(context).size.width * (size / 1440);
-    log('returnWidth: $returnWidth , current width: ${MediaQuery.of(context).size.width}');
+    // log('returnWidth: $returnWidth , current width: ${MediaQuery.of(context).size.width}');
     return returnWidth;
   }
 
