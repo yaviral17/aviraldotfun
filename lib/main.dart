@@ -1,3 +1,4 @@
+import 'package:aviraldotfun/NewDesign/screens/newdesign/screens/home/home_page_view.dart';
 import 'package:aviraldotfun/providers/current_state.dart';
 import 'package:aviraldotfun/providers/theme_provider.dart';
 import 'package:aviraldotfun/screen/homescreen/home_page.dart';
@@ -20,7 +21,7 @@ class Portfolio extends StatelessWidget {
         ChangeNotifierProvider(create: (context) => CurrentState()),
       ],
       child: const MaterialApp(
-        home: HomePage(),
+        home: HomePageView(),
       ),
     );
   }
