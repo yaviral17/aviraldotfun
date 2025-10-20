@@ -1,19 +1,18 @@
-import 'dart:developer';
+// import 'dart:developer';
 import 'dart:ui';
 
 import 'package:aviraldotfun/providers/current_state.dart';
-import 'package:aviraldotfun/screen/homescreen/phone_home_page.dart';
+// import 'package:aviraldotfun/screen/homescreen/phone_home_page.dart';
 import 'package:aviraldotfun/screen/homescreen/phone_screen_wrapper.dart';
-import 'package:aviraldotfun/screen/payme/view/auth/signup/phone_view.dart';
+// import 'package:aviraldotfun/screen/payme/view/auth/signup/phone_view.dart';
 import 'package:aviraldotfun/utils/portfolio_sizes.dart';
 import 'package:device_frame/device_frame.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:gif/gif.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:icons_plus/icons_plus.dart' as icon_plus;
-import 'package:iconsax/iconsax.dart';
+// import 'package:iconsax/iconsax.dart';
 import 'package:provider/provider.dart';
 import 'package:smooth_corner/smooth_corner.dart';
 
@@ -27,10 +26,10 @@ class HomePageView extends StatefulWidget {
 class _HomePageViewState extends State<HomePageView>
     with SingleTickerProviderStateMixin {
   double _hoveringOnSkill = -1;
-  double _hoveringOnMenuItem = -1;
-  bool _hoveringResumeButton = false;
+  // double _hoveringOnMenuItem = -1;
+  // bool _hoveringResumeButton = false;
   bool _hoverGetInTouch = false;
-  bool _showPhone = false;
+  bool _showPhone = true;
   List<String> menuItem = [
     "Home",
     "Skills",
@@ -54,7 +53,7 @@ class _HomePageViewState extends State<HomePageView>
   ScrollController scrollViewController = ScrollController();
   bool isVisible = false;
 
-  late GifController _gifontroller;
+  // late GifController _gifontroller;
 
   double responsiveWidth(double static, double adaptive,
       {double breakPoint = 950}) {
@@ -71,7 +70,7 @@ class _HomePageViewState extends State<HomePageView>
         isVisible = true;
       });
     }
-    WidgetsBinding.instance!.addPostFrameCallback((_) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
       Scrollable.ensureVisible(
         key.currentContext!,
         duration: const Duration(milliseconds: 500),
@@ -99,8 +98,8 @@ class _HomePageViewState extends State<HomePageView>
       _aboutme,
       _contactme
     ];
-    scrollViewController?.addListener(() {
-      if (scrollViewController?.position.userScrollDirection ==
+    scrollViewController.addListener(() {
+      if (scrollViewController.position.userScrollDirection ==
           ScrollDirection.reverse) {
         if (isVisible == true) {
           setState(() {
@@ -108,7 +107,7 @@ class _HomePageViewState extends State<HomePageView>
           });
         }
       } else {
-        if (scrollViewController?.position.userScrollDirection ==
+        if (scrollViewController.position.userScrollDirection ==
             ScrollDirection.forward) {
           if (isVisible == false) {
             setState(() {
@@ -122,9 +121,56 @@ class _HomePageViewState extends State<HomePageView>
 
   @override
   Widget build(BuildContext context) {
-    String phone_bg = "assets/images/phone_bg.gif";
+    // String phone_bg = "assets/images/phone_bg.gif";
     CurrentState currentState =
         Provider.of<CurrentState>(context, listen: false);
+    // Data: skills, experiences, and projects content
+    final List<String> displayedSkills = [
+      "Flutter",
+      "Dart",
+      "Python",
+      "C++",
+      "Go",
+      "SQL",
+      "Firebase",
+      "Firestore",
+      "MongoDB",
+      "PostgreSQL",
+      "MySQL",
+      "REST APIs",
+      "Provider",
+      "Riverpod",
+      "GetX",
+      "BLoC",
+      "WebRTC",
+      "WebSocket",
+      "Docker",
+      "FastAPI",
+    ];
+
+    final List<Map<String, String>> experiences = [
+      {
+        'company': 'PayMe Payments',
+        'role': 'Mobile Developer → Technical Lead',
+        'duration': 'Sep 2024 - Dec 2024',
+        'summary':
+            'Explored blockchain/fintech, built UI/UX and frontend from scratch, integrated REST APIs, and presented in investor pitches.',
+      },
+      {
+        'company': 'Creative Mantra',
+        'role': 'UI/UX Designer & Frontend Developer',
+        'duration': 'Mar 2025 - Present',
+        'summary':
+            'Joined after freelancing for the CEO; delivering Figma designs and responsive frontend implementations.',
+      },
+      {
+        'company': 'PLnX World Pvt. Ltd.',
+        'role': 'Technical and Marketing Intern',
+        'duration': 'Sep 2023 - Apr 2024',
+        'summary':
+            'Introduced theme-driven UI across 50+ screens; improved UX, reduced crashes, and optimized media workflows.',
+      },
+    ];
     return Scaffold(
       backgroundColor: Colors.black,
       floatingActionButton: Visibility(
@@ -226,7 +272,7 @@ class _HomePageViewState extends State<HomePageView>
                     ],
                   ),
                 ),
-              ).animate(controller: _phoneController, autoPlay: false).slide(
+              ).animate(controller: _phoneController, autoPlay: true).slide(
                   begin: Offset(-1, 0),
                   end: Offset(0, 0),
                   curve: Curves.easeInOut);
@@ -307,13 +353,13 @@ class _HomePageViewState extends State<HomePageView>
                                   onTap: () {
                                     scrollTo(keys[index]);
                                   },
-                                  onHover: (value) {
-                                    log('value: $value');
-                                    setState(() {
-                                      _hoveringOnMenuItem =
-                                          value ? index.toDouble() : -1;
-                                    });
-                                  },
+                                  // onHover: (value) {
+                                  //   log('value: $value');
+                                  //   setState(() {
+                                  //     _hoveringOnMenuItem =
+                                  //         value ? index.toDouble() : -1;
+                                  //   });
+                                  // },
                                   child: Text(
                                     menuItem[index],
                                     style: GoogleFonts.sora(
@@ -454,7 +500,7 @@ class _HomePageViewState extends State<HomePageView>
                                             breakPoint: 1180,
                                           ),
                                           child: Text(
-                                            "I'm Aviral yadav Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to specimen book.",
+                                            "Software Developer crafting performant, animated, cross‑platform apps in Flutter. Promoted to Technical Lead at PayMe Payments within two months; now designing in Figma and building frontends at Creative Mantra. Previously shipped production features at PLnX World and Shortsqueeze.",
                                             style: GoogleFonts.sora(
                                               fontSize: responsiveWidth(
                                                 12,
@@ -583,7 +629,7 @@ class _HomePageViewState extends State<HomePageView>
 
                         Wrap(
                           children: List.generate(
-                            10,
+                            displayedSkills.length,
                             (index) {
                               return InkWell(
                                 onTap: () {},
@@ -617,7 +663,7 @@ class _HomePageViewState extends State<HomePageView>
                                           MainAxisAlignment.center,
                                       children: [
                                         Icon(
-                                          icon_plus.LineAwesome.git,
+                                          icon_plus.LineAwesome.code_solid,
                                           size: 36,
                                           color: _hoveringOnSkill == index
                                               ? Colors.black
@@ -625,7 +671,7 @@ class _HomePageViewState extends State<HomePageView>
                                         ),
                                         const SizedBox(height: 10),
                                         Text(
-                                          "Git",
+                                          displayedSkills[index],
                                           style: GoogleFonts.sora(
                                             color: _hoveringOnSkill == index
                                                 ? Colors.black
@@ -675,8 +721,9 @@ class _HomePageViewState extends State<HomePageView>
                         ),
                         const SizedBox(height: 40),
                         ...List.generate(
-                          3,
+                          experiences.length,
                           (index) {
+                            final exp = experiences[index];
                             return Container(
                               padding: const EdgeInsets.all(18),
                               margin: const EdgeInsets.only(bottom: 24),
@@ -692,22 +739,25 @@ class _HomePageViewState extends State<HomePageView>
                                 children: [
                                   Row(
                                     children: [
-                                      icon_plus.Brand(
-                                        icon_plus.Brands.google,
+                                      Icon(
+                                        icon_plus.LineAwesome.briefcase_solid,
                                         size: 36,
+                                        color: Colors.white,
                                       ),
                                       const SizedBox(width: 10),
-                                      Text(
-                                        "Lorem Impsum diosm",
-                                        style: GoogleFonts.sora(
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.w600,
-                                          color: Colors.white,
+                                      Flexible(
+                                        child: Text(
+                                          "${exp['company']} — ${exp['role']}",
+                                          style: GoogleFonts.sora(
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.w600,
+                                            color: Colors.white,
+                                          ),
                                         ),
                                       ),
-                                      Spacer(),
+                                      const Spacer(),
                                       Text(
-                                        "Nov 2023 - Present",
+                                        exp['duration'] ?? '',
                                         style: GoogleFonts.sora(
                                           fontSize: 12,
                                           fontWeight: FontWeight.w400,
@@ -720,7 +770,7 @@ class _HomePageViewState extends State<HomePageView>
                                     height: ASizes.arh(context, 36),
                                   ),
                                   Text(
-                                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to specimen book.",
+                                    exp['summary'] ?? '',
                                     style: GoogleFonts.sora(
                                       fontSize: 12,
                                       fontWeight: FontWeight.w300,
@@ -843,6 +893,11 @@ class _HomePageViewState extends State<HomePageView>
                           projectInfoHeight: 300,
                           projectInfoWidth:
                               responsiveWidth(400, 430, breakPoint: 1180),
+                          indexNo: "01",
+                          title: "Paysa — Expense Manager",
+                          description:
+                              "Split and track expenses with AI‑assisted money management; used by 100+ users.",
+                          imagePath: "assets/images/project_image.png",
                         ),
                         ProjectTIleWidget(
                           imageWidth:
@@ -852,6 +907,12 @@ class _HomePageViewState extends State<HomePageView>
                           projectInfoWidth:
                               responsiveWidth(400, 430, breakPoint: 1180),
                           // proectImageLeft: false,
+                          proectImageLeft: false,
+                          indexNo: "02",
+                          title: "InShop — Product Aggregator",
+                          description:
+                              "Consolidated product info from 50+ websites using RapidAPI, with performance optimizations.",
+                          imagePath: "assets/images/project_image.png",
                         ),
                         ProjectTIleWidget(
                           imageWidth:
@@ -860,67 +921,72 @@ class _HomePageViewState extends State<HomePageView>
                           projectInfoHeight: 300,
                           projectInfoWidth:
                               responsiveWidth(400, 430, breakPoint: 1180),
+                          indexNo: "03",
+                          title: "Portfolio — Flutter Web",
+                          description:
+                              "Modern personal portfolio with device preview, animations, and responsive UI.",
+                          imagePath: "assets/images/project_image.png",
                         ),
 
                         /// Testimonials
                         const SizedBox(
                           height: 60,
                         ),
-                        Row(
-                          key: _testimonial,
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              "My ",
-                              style: GoogleFonts.sora(
-                                fontSize: 36,
-                                letterSpacing: -2,
-                                color: Colors.white,
-                                fontWeight: FontWeight.w400,
-                              ),
-                            ),
-                            Text(
-                              "Testimonials",
-                              style: GoogleFonts.sora(
-                                fontSize: 36,
-                                letterSpacing: -2,
-                                color: Colors.white,
-                                fontWeight: FontWeight.w700,
-                              ),
-                            ),
-                          ],
-                        ),
-                        const SizedBox(
-                          height: 60,
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 72.0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              TestimonialWidget(
-                                width:
-                                    responsiveWidth(280, 240, breakPoint: 1500),
-                                height:
-                                    responsiveWidth(400, 380, breakPoint: 1500),
-                              ),
-                              TestimonialWidget(
-                                width:
-                                    responsiveWidth(280, 240, breakPoint: 1500),
-                                height:
-                                    responsiveWidth(400, 380, breakPoint: 1500),
-                              ),
-                              TestimonialWidget(
-                                width:
-                                    responsiveWidth(280, 240, breakPoint: 1500),
-                                height:
-                                    responsiveWidth(400, 380, breakPoint: 1500),
-                              ),
-                            ],
-                          ),
-                        ),
+                        // Row(
+                        //   key: _testimonial,
+                        //   mainAxisSize: MainAxisSize.max,
+                        //   mainAxisAlignment: MainAxisAlignment.center,
+                        //   children: [
+                        //     Text(
+                        //       "My ",
+                        //       style: GoogleFonts.sora(
+                        //         fontSize: 36,
+                        //         letterSpacing: -2,
+                        //         color: Colors.white,
+                        //         fontWeight: FontWeight.w400,
+                        //       ),
+                        //     ),
+                        //     Text(
+                        //       "Testimonials",
+                        //       style: GoogleFonts.sora(
+                        //         fontSize: 36,
+                        //         letterSpacing: -2,
+                        //         color: Colors.white,
+                        //         fontWeight: FontWeight.w700,
+                        //       ),
+                        //     ),
+                        //   ],
+                        // ),
+                        // const SizedBox(
+                        //   height: 60,
+                        // ),
+                        // Padding(
+                        //   padding: const EdgeInsets.symmetric(horizontal: 72.0),
+                        //   child: Row(
+                        //     mainAxisSize: MainAxisSize.max,
+                        //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        //     children: [
+                        //       TestimonialWidget(
+                        //         width:
+                        //             responsiveWidth(280, 240, breakPoint: 1500),
+                        //         height:
+                        //             responsiveWidth(400, 380, breakPoint: 1500),
+                        //       ),
+                        //       TestimonialWidget(
+                        //         width:
+                        //             responsiveWidth(280, 240, breakPoint: 1500),
+                        //         height:
+                        //             responsiveWidth(400, 380, breakPoint: 1500),
+                        //       ),
+                        //       TestimonialWidget(
+                        //         width:
+                        //             responsiveWidth(280, 240, breakPoint: 1500),
+                        //         height:
+                        //             responsiveWidth(400, 380, breakPoint: 1500),
+                        //       ),
+                        //     ],
+                        //   ),
+                        // ),
 
                         SizedBox(
                           height: 60,
@@ -1320,6 +1386,10 @@ class ProjectTIleWidget extends StatelessWidget {
   final double imageHeight;
   final double projectInfoWidth;
   final double projectInfoHeight;
+  final String indexNo;
+  final String title;
+  final String description;
+  final String imagePath;
   const ProjectTIleWidget({
     super.key,
     this.proectImageLeft = true,
@@ -1327,6 +1397,10 @@ class ProjectTIleWidget extends StatelessWidget {
     this.imageHeight = 740,
     this.projectInfoWidth = 530,
     this.projectInfoHeight = 740,
+    this.indexNo = "01",
+    this.title = "Project Title",
+    this.description = "",
+    this.imagePath = "assets/images/project_image.png",
   });
 
   @override
@@ -1339,7 +1413,7 @@ class ProjectTIleWidget extends StatelessWidget {
       smoothness: 1,
       borderRadius: BorderRadius.circular(12),
       child: Image.asset(
-        "assets/images/project_image.png",
+        imagePath,
         width: imageWidth,
         height: imageHeight,
         fit: BoxFit.cover,
@@ -1352,7 +1426,7 @@ class ProjectTIleWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            "01",
+            indexNo,
             style: GoogleFonts.sora(
               fontSize: 36,
               letterSpacing: -2,
@@ -1362,7 +1436,7 @@ class ProjectTIleWidget extends StatelessWidget {
           ),
           FittedBox(
             child: Text(
-              "Crypto Screener Application",
+              title,
               style: GoogleFonts.sora(
                 fontSize: 40,
                 letterSpacing: -2,
@@ -1373,7 +1447,7 @@ class ProjectTIleWidget extends StatelessWidget {
           ),
           const SizedBox(height: 20),
           Text(
-            "I'm Aviral Yadav Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to specimen book.",
+            description,
             style: GoogleFonts.sora(
               fontSize: 12,
               fontWeight: FontWeight.w300,

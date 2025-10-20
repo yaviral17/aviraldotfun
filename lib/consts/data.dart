@@ -1,21 +1,10 @@
-import 'package:aviraldotfun/models/app_model.dart';
 import 'package:aviraldotfun/models/color_model.dart';
 import 'package:aviraldotfun/models/device_model.dart';
-import 'package:aviraldotfun/screen/miniProjects/education/education.dart';
-import 'package:aviraldotfun/screen/miniProjects/experience/experience.dart';
-import 'package:aviraldotfun/screen/payme/utils/theme/theme.dart';
-import 'package:aviraldotfun/screen/payme/view/auth/auth_view.dart';
-import 'package:aviraldotfun/screen/payme/view/home/home_view.dart';
 import 'package:device_frame/device_frame.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:get/get_navigation/src/root/get_material_app.dart';
-import 'package:iconsax/iconsax.dart';
 
 import '../models/experience_model.dart';
 import '../models/skill_model.dart';
-import '../screen/miniProjects/about/about.dart';
-import '../screen/miniProjects/skills/skills.dart';
 
 const double baseHeight = 790;
 const double baseWidth = 1440;
@@ -186,23 +175,14 @@ final paymeNavigationKey = GlobalKey<NavigatorState>();
 final List<JobExperience> education = [
   JobExperience(
     color: Colors.red,
-    location: "Bhopal, Madhya Prafesh",
-    title: 'Computer Science Engineering',
+    location: "Bhopal, MP",
+    title: 'B. Tech., Computer Science Engineering',
     company: 'VIT Bhopal University',
-    startDate: 'June 2021',
-    endDate: 'June 2025',
+    startDate: 'Sep 2021',
+    endDate: 'May 2025',
     bulletPoints: [
-      'Learning about computer science and engineering',
-      'Working on various projects',
-      'Learning about Flutter and Dart in depth',
-      'Learning about various technologies and languages like Python, C++, Java, etc.',
-      'Exploring the world of open source',
-      'Participating in various hackathons',
-      'Won internal hackathon in college',
-      'Won intrermural basketball in college',
-      'Did internship in various companies',
-      'Baught my first domain',
-      'Baught Macbook pro M4 2024 by myself',
+      'GPA: 7.5',
+      'Relevant Coursework: DSA, Algorithms, OS, Computer Networks',
     ],
   ),
   JobExperience(
@@ -243,17 +223,16 @@ final List<JobExperience> education = [
 final List<JobExperience> jobExperiences = [
   JobExperience(
     color: Colors.blue,
-    location: "Bhopal, India",
-    title: 'Tech Lead',
-    company: 'PayME Fintech',
+    location: "Remote / Bhopal, India",
+    title: 'Mobile Developer → Technical Lead',
+    company: 'PayMe Payments',
     startDate: 'Sep 2024',
     endDate: 'Dec 2024',
     bulletPoints: [
-      "Build UI/UX from scratch and frontend",
-      "Did API intigration for functional UI.",
-      "Took part in invester pitch to present Technical aspacts of Payme",
-      "Hosted and managed beta launch for PayMe payment mobile app.",
-      "It is a baby startup",
+      "Explored blockchain and fintech; led mobile app development.",
+      "Promoted to Technical Lead after 2 months for cross-stack proficiency and leadership.",
+      "Built UI/UX and frontend from scratch; integrated REST APIs.",
+      "Presented technical aspects during investor pitches; hosted beta launch.",
     ],
   ),
   // Add more job experiences here...
@@ -279,6 +258,18 @@ final List<JobExperience> jobExperiences = [
       "Revamped codebase by integrating theme colors in place of hard-coded colors, ensuring uniformity across 50+ screens, which boosted user satisfaction by 20% and improved overall app aesthetics.",
       "Enhanced layout for both user and vendor apps across various devices, improving user experience ratings by 15%.",
       "Developed a video selector, editor, and compressor reducing video size up to 40% less.",
+    ],
+  ),
+  JobExperience(
+    color: Colors.purpleAccent,
+    location: "Remote",
+    title: 'UI/UX Designer & Frontend Developer',
+    company: 'Creative Mantra',
+    startDate: 'Mar 2025',
+    endDate: 'Present',
+    bulletPoints: [
+      "Joined after freelancing for the CEO; delivering UI/UX in Figma and frontend builds.",
+      "Collaborated with stakeholders to ship pixel-perfect, responsive interfaces.",
     ],
   ),
   JobExperience(
@@ -323,17 +314,15 @@ String introduction = "";
 String intro_markdown = """
 ## Hi, I’m Aviral Yadav 👋  
 
-A passionate **Software Developer** with **2+ years** of experience crafting elegant and high-performing **cross-platform applications** using the **Flutter framework**. From college projects and internships to leading club activities, I’ve honed my skills in building dynamic mobile apps with a focus on clean UI and delightful **animations** that engage users.
+Software Developer focused on building performant, animated, cross‑platform apps in Flutter. I’ve led end‑to‑end delivery from UX to API integrations, and I enjoy turning complex flows into clean, intuitive experiences.
 
-I thrive on solving challenges—whether it’s optimizing app layouts, fixing crashes, or integrating APIs for enhanced features. At **Plana World**, I revamped app aesthetics and boosted user satisfaction, while at **Shortsqueeze**, I developed 40+ responsive screens with seamless animations, increasing user interaction by 30%.  
+Recently, I explored blockchain/fintech at **PayMe Payments**, where I started as a Mobile Developer and was promoted to **Technical Lead** within two months. I later joined **Creative Mantra** (Mar 2025–Present) as a **UI/UX Designer & Frontend Developer** after collaborating with the CEO through freelance projects.
 
-### Some of My Standout Projects 🚀  
-- **Paysa**: An expense management app with AI-powered money management features, helping 100+ users split and track bills.  
-- **InShop**: A product detail aggregator, integrating shopping APIs across 50+ websites to optimize performance and user experience.  
+Previously at **PLnX World** and **Shortsqueeze**, I improved app quality, performance, and shipped production features used by thousands.
 
-
-
-
+### Selected Projects  
+- **Paysa** — Expense tracking & AI‑assisted money management for 100+ users.  
+- **InShop** — Aggregated product details from 50+ sites via RapidAPI.  
 """;
 
 // ---
@@ -349,56 +338,26 @@ const String playApps =
     "https://play.google.com/store/apps/details?id=space.shortsqueeze.inspire.inspire_scholarship&hl=en-US";
 
 List<SkillsModel> skills = [
-  SkillsModel(skillName: "Flutter", colorS: Colors.blue, iconPath: "random"),
-  SkillsModel(
-    skillName: "Firebase",
-    colorS: Colors.yellow,
-  ),
-  SkillsModel(
-    skillName: "Github",
-    colorS: Colors.yellow,
-  ),
-  SkillsModel(
-    skillName: "Dart",
-    colorS: Colors.blue,
-  ),
-  SkillsModel(
-    skillName: "Provider",
-    colorS: Colors.orange,
-  ),
-  SkillsModel(
-    skillName: "Riverpod",
-    colorS: Colors.blue,
-  ),
-  SkillsModel(
-    skillName: "GetX",
-    colorS: Colors.blue,
-  ),
-  SkillsModel(
-    skillName: "Bloc",
-    colorS: Colors.blue,
-  ),
-  SkillsModel(
-    skillName: "Python",
-    colorS: Colors.blue,
-  ),
-
-  // SkillsModel(
-  //   skillName: "CI/CD",
-  //   colorS: Colors.yellow,
-  // ),
-  // SkillsModel(
-  //   skillName: "Code Magic",
-  //   colorS: Colors.orange,
-  // ),
-  // SkillsModel(
-  //   skillName: "Firebase",
-  //   colorS: Colors.yellow,
-  // ),
-  SkillsModel(
-    skillName: "REST API",
-    colorS: Colors.blue,
-  ),
+  SkillsModel(skillName: "Flutter", colorS: Colors.blue),
+  SkillsModel(skillName: "Dart", colorS: Colors.blue),
+  SkillsModel(skillName: "Python", colorS: Colors.blue),
+  SkillsModel(skillName: "C++", colorS: Colors.blue),
+  SkillsModel(skillName: "Go", colorS: Colors.blue),
+  SkillsModel(skillName: "SQL", colorS: Colors.indigo),
+  SkillsModel(skillName: "Firebase", colorS: Colors.yellow),
+  SkillsModel(skillName: "Firestore", colorS: Colors.yellow),
+  SkillsModel(skillName: "MongoDB", colorS: Colors.green),
+  SkillsModel(skillName: "PostgreSQL", colorS: Colors.indigo),
+  SkillsModel(skillName: "MySQL", colorS: Colors.indigo),
+  SkillsModel(skillName: "REST APIs", colorS: Colors.blue),
+  SkillsModel(skillName: "Provider", colorS: Colors.orange),
+  SkillsModel(skillName: "Riverpod", colorS: Colors.blue),
+  SkillsModel(skillName: "GetX", colorS: Colors.blue),
+  SkillsModel(skillName: "BLoC", colorS: Colors.blue),
+  SkillsModel(skillName: "WebRTC", colorS: Colors.teal),
+  SkillsModel(skillName: "WebSocket", colorS: Colors.teal),
+  SkillsModel(skillName: "Docker", colorS: Colors.blueGrey),
+  SkillsModel(skillName: "FastAPI", colorS: Colors.green),
 ];
 
 List<SkillsModel> languages = [

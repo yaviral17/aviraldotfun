@@ -1,0 +1,125 @@
+{
+    "personal_details": {
+      "name": "AVIRAL YADAV",
+      "phone": "8077963037",
+      "email": "yaviralatwork@gmail.com",
+      "linkedin": "linkedin.com/in/yaviral17",
+      "portfolio": "Portfolio",
+      "address": "Sanjay Naga, Etah, UP 207001"
+    },
+    "technical_skills": {
+      "languages": [
+        "Python",
+        "C++",
+        "Dart",
+        "Go",
+        "SQL"
+      ],
+      "technologies": [
+        "PostgreSQL",
+        "MongoDB",
+        "Firebase Firestore",
+        "MySql",
+        "Flutter",
+        "Firebase",
+        "Git/GitHub",
+        "REST APIS"
+      ],
+      "familiar": [
+        "WebRTC",
+        "WebScoket",
+        "Docker",
+        "FastAPI"
+      ]
+    },
+    "education": [
+      {
+        "institution": "VIT Bhopal University",
+        "degree": "B. Tech., Computer Science Engineering",
+        "gpa": "7.5",
+        "start_date": "Sep. 2021",
+        "end_date": "May 2025",
+        "location": "Bhopal, MP",
+        "relevant_coursework": [
+          "DSA",
+          "Algorithms",
+          "OS",
+          "Computer Networks"
+        ]
+      }
+    ],
+    "experience": [
+      {
+        "company": "Plana World",
+        "title": "Technical And Marketing Intern",
+        "start_date": "Sep 2023",
+        "end_date": "Apr 2024",
+        "location": "Remote",
+        "description": [
+          "Revamped codebase by integrating theme colors in place of hard-coded colors, ensuring uniformity across 50+ screens, which boosted user satisfaction by 20% and improved overall app aesthetics.",
+          "Enhanced layout for both user and vendor apps across various devices, improving user experience ratings by 15%.",
+          "Developed a video selector, editor, and compressor reducing video size up to 40% less.",
+          "Fixed crashes tracked by Firebase Crashlytics, leading to a 25% reduction in app crash rate."
+        ]
+      },
+      {
+        "company": "Shortsqueeze",
+        "title": "Software Development Engineer",
+        "start_date": "Dec 2022",
+        "end_date": "Apr 2023",
+        "location": "Remote",
+        "description": [
+          "Assisted in developing the front end of 3 mobile applications (Inspire Manak, Racing Line, Podium Pay) using Dart and the Flutter framework.",
+          "Managed 30+ screens for the Inspire Manak app, achieving 100k+ downloads and a 4.2 rating on the Play Store.",
+          "Created 20+ screens for Racing Line (unreleased) and designed 10+ screens with animations for Podium Pay (pending release).",
+          "Worked on a PDF generating feature in the Inspire Manak App, facilitating document generation for 50k+ users.",
+          "Engineered 40+ interactive and responsive screens featuring seamless animations, leading to a 30% increase in user interaction and a 20% boost in session duration.",
+          "Implemented AES encryption for secure OTP transactions, increasing security by about 25%.",
+          "Achieved Security Audit certification for the Inspire Manak App by implementing rigorous security protocols; enhanced app security resulting in a 40% reduction in vulnerability threats and improved user trust."
+        ]
+      }
+    ],
+    "projects": [
+      {
+        "name": "Paysa",
+        "technologies": [
+          "Flutter",
+          "Firebase",
+          "Gemini-2-API"
+        ],
+        "start_date": "Jan 2024",
+        "end_date": "Mar 2024",
+        "description": [
+          "Developed a mobile application alternative to Splitwise, enabling unlimited expense splits and personal expense tracking, with over 100 users tracking their bills.",
+          "Integrated Gemini API for contextual chatting, enhancing money management features, resulting in a 20% increase in user engagement.",
+          "Implemented Firebase Authentication, Firestore, and Storage bucket services, improving app reliability and reducing backend maintenance time by 15%."
+        ]
+      },
+      {
+        "name": "InShop",
+        "technologies": [
+          "Flutter",
+          "Rapid API"
+        ],
+        "start_date": "Oct 2022",
+        "end_date": "Nov 2022",
+        "description": [
+          "Created an Android application to consolidate product details.",
+          "Utilized the Shopping API from RapidAPI, providing users with comprehensive product information from over 50 different websites.",
+          "Conducted extensive testing, fixing 40+ bugs, optimizing performance by 25%, and significantly improving user experience."
+        ]
+      }
+    ],
+    "leadership_extracurricular": [
+      {
+        "title": "Technical Lead of Android Club",
+        "start_date": "May 2023",
+        "end_date": "May 2024",
+        "activities": [
+          "Managed 2+ events, leading the technical team in preparing assignments for contestants.",
+          "Led the judging team in evaluating technical tasks submitted by participants.",
+          "Conducted 3 online sessions on Flutter/Dart through Android Club's YouTube channel with 50+ viewers."
+        ]
+      }
+    ]
+  }
